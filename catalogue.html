@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue BLITZ420</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background:#000; color:#FFD700; font-family:'Poppins',sans-serif; text-align:center; }
+    h1 { margin:20px; }
+    .produits { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .produit {
+      border:1px solid #FFD700;
+      border-radius:10px;
+      width:150px;
+      padding:10px;
+      background:#111;
+    }
+    img { width:100%; border-radius:8px; }
+    a { color:#FFD700; display:block; margin-top:20px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <h1>Catalogue Produits</h1>
+  <div class="produits" id="catalogue"></div>
+  <a href="index.html">← Retour</a>
+  <script>
+    const produits = [
+      { nom: "Produit 1", prix: "25€", img: "https://via.placeholder.com/150" },
+      { nom: "Produit 2", prix: "30€", img: "https://via.placeholder.com/150" },
+    ];
+
+    const conteneur = document.getElementById('catalogue');
+    produits.forEach(p => {
+      conteneur.innerHTML += `
+        <div class="produit">
+          <img src="${p.img}" alt="${p.nom}">
+          <h3>${p.nom}</h3>
+          <p>${p.prix}</p>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
